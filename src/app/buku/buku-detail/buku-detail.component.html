@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img [src]="buku.imagePath" 
+    alt="{{buku.name}}" 
+    class="img-responsive"
+    style="max-height:300px">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{buku.name}} </h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div 
+    class="btn-group"
+    appDropdown>
+      <button type="button" class="btn btn-primary dropdown-toggle">
+        Manage <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li> <a (click)="onAddDaftarList()" style="cursor:pointer;">To Buku List</a></li>
+        <li> <a (click)="onEditBuku()" style="cursor:pointer;"> Edit Buku</a></li>
+        <li> <a (click)="onDeleteBuku()" style="cursor:pointer;"> Delete Buku </a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    {{buku.description}}
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <!-- Ingredeint -->
+    <ul class="list-group">
+      <li 
+      class="list-group-item"
+      *ngFor="let jumlah of buku.jumlah">
+      {{jumlah.name}}-{{jumlah.amount}}
+    </li>
+    </ul>
+  </div>
+</div>
+

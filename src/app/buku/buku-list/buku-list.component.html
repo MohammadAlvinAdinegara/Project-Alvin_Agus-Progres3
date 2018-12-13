@@ -1,0 +1,17 @@
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success" (click)="onNewBuku()">Buku</button>
+        
+        <hr>
+    </div>
+    <hr>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <app-buku-item
+        *ngFor="let bukuEL of bukus; let i = index"
+        [buku]="bukuEL"
+        [index]="i"></app-buku-item>
+    </div>
+</div>
